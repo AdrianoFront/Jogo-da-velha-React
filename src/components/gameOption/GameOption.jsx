@@ -1,7 +1,7 @@
 import styles from './GameOption.module.css'
 import Icon from '../icon/Icon'
 
-const GameIcon=({ IconName }) => <Icon iconName={iconName} size="25px"/>
+const GameIcon=({ iconName }) => <Icon iconName={iconName} size="25px"/>
 
 function GameOption ({ status, onClick }) {
   return (
