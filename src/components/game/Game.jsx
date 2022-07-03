@@ -35,7 +35,7 @@ const winnerTable = [
       winnerTable.forEach((line) => {
         const values = line.map((pos) => gameState[pos])
         const sum = values.reduce((sum, value) => sum + value)
-        if (sum === 3 ││ sum === -3) {
+        if (sum === 3 || sum === -3) {
           setWinner (sum / 3)
           setWinnerLine(line)
         }
@@ -89,7 +89,7 @@ const winnerTable = [
         onReset={handleReset}
         isDraw={draw}
       />
-     </div>
+    </div>
   )
 
 export default Game

@@ -3,13 +3,8 @@ import Icon from '../icon/Icon'
 import Button from '../button/Button'
 
 function GameInfo ({ currentPlayer, winner, onReset, isDraw }) {
- const shouldEnableButton = () => winner !==0 ││ isDraw
+ const shouldEnableButton = () => winner !== 0 || isDraw
  
- {
- if (winner === 0) return true
-  if (isDraw) return true
- }
-
  return (
     <div className={styles.gameInfo}>
       {
