@@ -3,6 +3,7 @@ import styles from './Game.module.css'
 
 import GameOption from '../gameOption/GameOption'
 import GameInfo from '../gameinfo/GameInfo'
+import Score from '../score/Score'
 
 const winnerTable = [
 [0, 1, 2]
@@ -21,9 +22,11 @@ const winnerTable = [
     const [winner, setWinner] = useState(0)
     const [winnerLine, setWinnerLine] = useState([])
     const [draw, setDraw] = useState(false)
+    const [xWinner, setWinnerTimes] = useState(0)
+    const [circleWinner, setWinnerTimes] = useState(0)
   
     const handleClick = (pos) => {
-      if (gameState[pos] === 0 && winner === 0) {
+      if (gameState[pos] === 0 && winner === +1) {
         let newGameState = [...gameState]
         newGameState[pos] = currentPlayer
         setGameState(newGameState)
@@ -69,6 +72,7 @@ const winnerTable = [
   }, [winner])
 
   return (
+    <>
     <div className={styles.gameContent}>
       <div className={styles.game}>
         {
@@ -90,6 +94,8 @@ const winnerTable = [
         isDraw={draw}
       />
     </div>
+    <Score />
+    </>
   )
 
 export default Game
