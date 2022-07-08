@@ -1,6 +1,6 @@
 import styles from './Score.module.css'
 import Icon from '../icon/Icon'
-import Game from '.game/Game'
+import Game from './game/Game'
 
 function Score ({ xWinnerTimes, circleWinnerTimes }) {
    return (

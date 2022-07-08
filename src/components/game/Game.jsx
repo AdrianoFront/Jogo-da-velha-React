@@ -22,24 +22,24 @@ const winnerTable = [
     const [winner, setWinner] = useState(0)
     const [winnerLine, setWinnerLine] = useState([])
     const [draw, setDraw] = useState(false)
-    const [xWinnerTimes, setWinnerTimes] = useState(0)
-    const [circleWinnerTimes, setWinnerTimes] = useState(0)
+    const [xWinnerTimes, setXWinnerTimes] = useState(0)
+    const [circleWinnerTimes, setCircleWinnerTimes] = useState(0)
   
     const handleClick = (pos) => {
-      if (gameState[pos] === 0 && winner === +1) {
+      if (gameState[pos] === 0 && winner === +0) {
         let newGameState = [...gameState]
         newGameState[pos] = currentPlayer
         setGameState(newGameState)
       }
     }
-  }
+  
 
   const verifyGame = () => {
       winnerTable.forEach((line) => {
         const values = line.map((pos) => gameState[pos])
         const sum = values.reduce((sum, value) => sum + value)
         if (sum === 3 || sum === -3) {
-          setWinner (sum / 3)
+          setWinner(sum / 3)
           setWinnerLine(line)
           if (sum > 0) {
             setCircleWinnerTimes(circleWinnerTimes + 1)
@@ -104,5 +104,6 @@ const winnerTable = [
       circleWinnerTimes={circleWinnerTimes}/>
     </>
   )
+}
 
 export default Game

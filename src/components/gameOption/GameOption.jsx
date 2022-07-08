@@ -1,4 +1,4 @@
-import classNames from 'classanames'
+import classNames from 'classNames'
 
 import styles from './GameOption.module.css'
 import Icon from '../icon/Icon'
